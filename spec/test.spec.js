@@ -1,4 +1,5 @@
-var calculator = require('../src/simpleCalculator');
+const Calculator = require('../src/simpleCalculator');
+const calculator = new Calculator();
 
 describe("class Calculator", function () {
    
@@ -22,7 +23,7 @@ describe("class Calculator", function () {
         expect(calculator.add(1,2)).toEqual(3);
     });
 });
-
+describe("class Calculator", function () {
     it("should return last result", function () {
         expect(calculator.last()).toEqual(3);
     });
@@ -31,6 +32,6 @@ describe("class Calculator", function () {
     });
     it("Should take single number as slot number", function () {
         expect(calculator.set_slot(1));
-        expect(calculator.get_slot(1)) .toEqual(1);
+        expect(calculator.get_slot(1)).toEqual(3);
     });
-
+});

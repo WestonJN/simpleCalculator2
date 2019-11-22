@@ -1,4 +1,4 @@
-class Calculator{
+module.exports =class Calculator{
     constructor() {
         this.slot = [];
         this.last_value =0;
@@ -13,7 +13,9 @@ class Calculator{
             
             this.last_value =add;
        
-        } return add;
+        }
+        this.last_value =add;
+        return add;
        
         }
         
@@ -24,8 +26,9 @@ class Calculator{
                  nums[i]= this.last_value;
              }
                 multiply *= nums[i];
-                this.last_value=multiply;
-        } return multiply;
+        } 
+        this.last_value=multiply;
+        return multiply;
            
            }
 
@@ -43,20 +46,3 @@ class Calculator{
     
 }
 
-let calculator_inst = new Calculator();
-console.log(calculator_inst.add(5,5));
-calculator_inst.set_slot(1);
-console.log(calculator_inst.get_slot(1));
-
-console.log(calculator_inst.add(10,42));
-calculator_inst.set_slot(2);
-console.log(calculator_inst.get_slot(2));
-
-calculator_inst.add(100,200);
-calculator_inst.get_slot(1);
-calculator_inst.get_slot(2);
-console.log(calculator_inst.last());
-
-console.log(calculator_inst.multiply(3,3));
-calculator_inst.set_slot(3);
-console.log(calculator_inst.get_slot(3));
