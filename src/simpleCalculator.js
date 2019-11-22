@@ -20,8 +20,11 @@ class Calculator{
      multiply(...nums){
          var multiply=1;
          for (var i=0;i < nums.length;i++){
+             if (nums.length[i] == 'Last'){
+                 nums[i]= this.last_value;
+             }
                 multiply *= nums[i];
-                thid.last_value=multiply;
+                this.last_value=multiply;
         } return multiply;
            
            }
@@ -31,7 +34,7 @@ class Calculator{
     }
     set_slot(){
         this.slot.push(this.last_value);
-        // return this.slot[i-1]
+       
     }  
     get_slot(i){
         return this.slot[i-1]
@@ -44,3 +47,16 @@ let calculator_inst = new Calculator();
 console.log(calculator_inst.add(5,5));
 calculator_inst.set_slot(1);
 console.log(calculator_inst.get_slot(1));
+
+console.log(calculator_inst.add(10,42));
+calculator_inst.set_slot(2);
+console.log(calculator_inst.get_slot(2));
+
+calculator_inst.add(100,200);
+calculator_inst.get_slot(1);
+calculator_inst.get_slot(2);
+console.log(calculator_inst.last());
+
+console.log(calculator_inst.multiply(3,3));
+calculator_inst.set_slot(3);
+console.log(calculator_inst.get_slot(3));
