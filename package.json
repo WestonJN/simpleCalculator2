@@ -1,0 +1,19 @@
+{
+  "name": "simplecalculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WestonJN/simpleCalculator2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WestonJN/simpleCalculator2/issues"
+  },
+  "homepage": "https://github.com/WestonJN/simpleCalculator2#readme"
+}
