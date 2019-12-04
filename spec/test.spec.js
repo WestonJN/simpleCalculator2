@@ -29,4 +29,7 @@ describe("Calculator", function () {
         expect(calculator.set_slot(1));
         expect(calculator.get_slot(1)).toEqual(15);//should display what is in slot 1
     });
+    it("Should take slot number and add with a number", function () {
+    expect(calculator.multiply("SLOT_1",2));
+});
 });
