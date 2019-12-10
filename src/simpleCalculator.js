@@ -1,20 +1,27 @@
-module.exports =class Calculator{
+module.exports = class Calculator{
     constructor() {
         this.arr = [];
         this.slot = [];
-        this.last_value = 0;
+        this.last_value = '';
     }
      add(...nums){
         var add=0;
         for (var i=0;i < nums.length;i++){
+            if (typeof nums[i] == 'string'){
             if (nums[i]=='LAST'){
-                add +=this.last_value;
-            }else{
-                add += nums[i];
-                this.last_value =add;
+                add +=this.last_value();
+            }else { 
+                let str =/\d/g;
+                let numSlot = str.exec(nums[i]);
+                add += this.get_slot(parseInt(numSlot[0]));
             }
-        }    
-  
+            }
+            else{
+                add += nums[i];
+            }
+
+        } 
+        this.last_value = add;
         return add;
        
         }
@@ -22,14 +29,20 @@ module.exports =class Calculator{
      multiply(...nums){
          var multiply=1;
          for (var i=0;i < nums.length;i++){
-             if (nums[i] == 'LAST'){
-                multiply *= this.last_value;
-             }else{
-                multiply *= nums[i];
-                this.last_value=multiply;
-            } 
+            if (typeof nums[i] == 'string'){
+                if (nums[i]=='LAST'){
+                    multiply *= this.last_value;
+                }else { 
+                    let str =/\d/g;
+                    let numSlot = str.exec(nums[i]);
+                    multiply *= this.get_slot(parseInt(numSlot[0]));
+                }
+                }
+                else{
+                    multiply *= nums[i];
+                }
         }
-        
+        this.last_value = multiply;
         return multiply;
            
     }
@@ -39,12 +52,13 @@ module.exports =class Calculator{
     }
     set_slot(){
         this.slot.push(this.last_value);
-       
     }  
     get_slot(i){
-        return this.slot[i-1]
+        return this.slot[i-1];
     }
-   
-    
 }
 
+// let calc = new Calculator;
+// console.log(calc.add(1,2));
+// calc.set_slot(1);
+// console.log(calc.add("SLOT_1",2));
