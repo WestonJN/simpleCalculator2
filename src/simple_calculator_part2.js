@@ -57,8 +57,3 @@ module.exports = class Calculator{
         return this.slot[i-1];
     }
 }
-
-// let calc = new Calculator;
-// console.log(calc.add(1,2));
-// calc.set_slot(1);
-// console.log(calc.add("SLOT_1",2));
