@@ -27,12 +27,12 @@ describe("Calculator", function () {
     });
     it("Should take single number as slot number", function () {
         calculator.add(5,4);
-        calculator.set_slot(1);
-        expect(calculator.get_slot(1)).toEqual(9);//should display what is in slot 1
+        calculator.set_slot(3);
+        expect(calculator.get_slot(3)).toEqual(9);//should display what is in slot 1
     });
 
     it("Should take slot number and add with a number", function () {
-        calculator.get_slot(1);
-        expect(calculator.add("SLOT_1",2)).toBe(11);
+        calculator.get_slot(3);
+        expect(calculator.add("SLOT_3",2)).toBe(11);
     });
 });
